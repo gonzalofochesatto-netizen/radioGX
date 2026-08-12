@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import logoImg from "@/assets/logo.png";
 import { RadioPlayer } from "@/components/RadioPlayer";
 import { SocialLinks } from "@/components/SocialLinks";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -58,7 +59,7 @@ function Index() {
 
       <main className="relative mx-auto flex max-w-5xl flex-col items-center px-6 pt-20 pb-16">
         <img
-          src="/logo.png"
+          src={logoImg}
           alt="GX Radio"
           width={478}
           height={478}
