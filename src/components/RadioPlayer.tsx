@@ -1,9 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Loader2, Music2, Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { EqualizerBars } from "@/components/EqualizerBars";
 
 const STREAM_URL = "https://streaming01.radiosenlinea.com.ar:10961/stream";
 
-export function RadioPlayer() {
+interface RadioPlayerProps {
+  onPlayStateChange?: (isPlaying: boolean) => void;
+}
+
+export function RadioPlayer({ onPlayStateChange }: RadioPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -11,6 +16,10 @@ export function RadioPlayer() {
   const [volume, setVolume] = useState(0.8);
   const [isMuted, setIsMuted] = useState(false);
   const [track, setTrack] = useState<string | null>(null);
+
+  useEffect(() => {
+    onPlayStateChange?.(isPlaying);
+  }, [isPlaying, onPlayStateChange]);
 
   useEffect(() => {
     let active = true;
@@ -125,8 +134,10 @@ export function RadioPlayer() {
           type="button"
           onClick={toggle}
           aria-label={isPlaying ? "Pausar GX Radio" : "Reproducir GX Radio"}
-          className={`neon-gradient flex size-24 items-center justify-center rounded-full text-primary-foreground transition-transform duration-200 hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none ${
-            isPlaying ? "animate-neon-pulse" : "shadow-[var(--shadow-neon)]"
+          className={`neon-gradient relative flex size-24 items-center justify-center rounded-full text-primary-foreground transition-all duration-300 hover:scale-105 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none ${
+            isPlaying
+              ? "animate-neon-pulse shadow-[0_0_50px_rgba(56,189,248,0.8)]"
+              : "shadow-[var(--shadow-neon)]"
           }`}
         >
           {isLoading ? (
@@ -139,7 +150,12 @@ export function RadioPlayer() {
         </button>
       </div>
 
-      <p className="mt-6 text-center text-sm text-muted-foreground">
+      {/* Live Audio Spectrum Bars */}
+      <div className="mt-6 flex justify-center">
+        <EqualizerBars isPlaying={isPlaying} barCount={18} className="w-full max-w-xs" />
+      </div>
+
+      <p className="mt-4 text-center text-sm font-medium text-muted-foreground">
         {hasError
           ? "No pudimos conectar con la transmisión. Intentá nuevamente en unos segundos."
           : isLoading

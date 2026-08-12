@@ -83,6 +83,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Escuchá GX Radio en vivo. Pop, Rock y Electrónica de las últimas 6 décadas.",
       },
       { property: "og:site_name", content: "GX Radio" },
+      { property: "og:image", content: "/logo.png" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

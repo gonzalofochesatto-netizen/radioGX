@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: process.env.VERCEL
+    ? { preset: "vercel" }
+    : process.env.NETLIFY
+      ? { preset: "netlify" }
+      : undefined,
 });
