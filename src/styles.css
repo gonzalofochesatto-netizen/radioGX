@@ -171,6 +171,13 @@
     0 0 50px color-mix(in oklab, var(--primary) 35%, transparent);
 }
 
+@utility neon-glow {
+  box-shadow:
+    0 0 30px 2px color-mix(in oklab, var(--accent) 65%, transparent),
+    0 0 60px 8px color-mix(in oklab, var(--primary) 45%, transparent),
+    inset 0 0 15px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
 @keyframes neon-pulse {
   0% {
     box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 55%, transparent);

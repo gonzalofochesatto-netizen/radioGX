@@ -112,7 +112,7 @@ export function RadioPlayer() {
   }, [isPlaying, isLoading]);
 
   return (
-    <div className="glass-panel mx-auto w-full max-w-md rounded-3xl p-8">
+    <div className="glass-panel neon-glow mx-auto w-full max-w-md rounded-3xl border border-accent/40 p-8 transition-all duration-300 hover:border-accent/80">
       <div className="flex items-center justify-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/60 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-silver uppercase">
           <span className="animate-live-dot inline-block size-2 rounded-full bg-accent" />

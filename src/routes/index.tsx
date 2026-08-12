@@ -62,7 +62,7 @@ function Index() {
           alt="GX Radio"
           width={478}
           height={478}
-          className="animate-rise-in w-56 rounded-3xl sm:w-64"
+          className="animate-rise-in neon-glow w-56 rounded-3xl ring-2 ring-accent/60 transition-transform duration-300 hover:scale-105 hover:ring-accent sm:w-64"
         />
 
         <h1 className="animate-rise-in text-glow mt-4 text-center text-3xl font-bold text-balance text-foreground sm:text-5xl">
@@ -77,7 +77,7 @@ function Index() {
           <RadioPlayer />
         </section>
 
-        <section className="glass-panel mt-24 w-full rounded-3xl p-10 text-center">
+        <section className="glass-panel neon-glow mt-24 w-full rounded-3xl border border-accent/30 p-10 text-center transition-all duration-300 hover:border-accent/60">
           <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">
             Seis décadas de buena música
           </h2>
