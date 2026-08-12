@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import logoImg from "@/assets/logo.png";
+import { LOGO_DATA_URL } from "@/assets/logoDataUrl";
 import { RadioPlayer } from "@/components/RadioPlayer";
 import { AudioVisualizerBackground } from "@/components/AudioVisualizerBackground";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -113,11 +113,7 @@ function Index() {
 
           {/* Logo Image with Neon Glow */}
           <img
-            src={logoImg}
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = "/logo.png";
-            }}
-            referrerPolicy="no-referrer"
+            src={LOGO_DATA_URL}
             alt="GX Radio Logo"
             width={478}
             height={478}
