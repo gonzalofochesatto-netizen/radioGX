@@ -101,12 +101,12 @@ function Index() {
         <div className="relative flex items-center justify-center py-4">
           {/* Radio Signal Outer Waves */}
           <div
-            className={`pointer-events-none absolute size-72 rounded-3xl border border-sky-400/40 bg-sky-500/5 sm:size-80 ${
+            className={`pointer-events-none absolute size-72 rounded-full border border-sky-400/40 bg-sky-500/5 sm:size-80 ${
               isPlaying ? "animate-radio-wave-1" : "opacity-30"
             }`}
           />
           <div
-            className={`pointer-events-none absolute size-80 rounded-3xl border border-accent/30 bg-accent/5 sm:size-96 ${
+            className={`pointer-events-none absolute size-80 rounded-full border border-accent/30 bg-accent/5 sm:size-96 ${
               isPlaying ? "animate-radio-wave-2" : "opacity-20"
             }`}
           />
@@ -117,10 +117,11 @@ function Index() {
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src = "/logo.png";
             }}
+            referrerPolicy="no-referrer"
             alt="GX Radio Logo"
             width={478}
             height={478}
-            className="animate-rise-in neon-glow relative z-10 w-56 rounded-3xl ring-2 ring-accent/60 transition-all duration-500 hover:scale-105 hover:ring-accent sm:w-64"
+            className="animate-rise-in neon-glow relative z-10 w-56 rounded-full ring-2 ring-accent/60 transition-all duration-500 hover:scale-105 hover:ring-accent sm:w-64"
           />
         </div>
 
