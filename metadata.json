@@ -1,0 +1,6 @@
+{
+  "name": "GX Radio Live",
+  "description": "Live web radio streaming player and landing page for GX Radio",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
